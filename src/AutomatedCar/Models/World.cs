@@ -18,6 +18,7 @@
         public List<AutomatedCar> controlledCars = new ();
 
         public static World Instance { get; } = new World();
+
         public List<WorldObject> WorldObjects { get; set; } = new List<WorldObject>();
 
         public AutomatedCar ControlledCar
