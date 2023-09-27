@@ -9,14 +9,14 @@
         private DummyPacket dummyPacket;
         public DummySensor(VirtualFunctionBus virtualFunctionBus) : base(virtualFunctionBus)
         {
-
+            this.dummyPacket = new DummyPacket();
         }
         public override void Process()
         {
             var circle = (World.Instance.WorldObjects[0] as Circle);
             var autocar = World.Instance.ControlledCar;
-            this.dummyPacket = new DummyPacket() { DistanceX = Math.Abs(autocar.X - circle.X), DistanceY = Math.Abs(autocar.Y - circle.Y) };
-            base.virtualFunctionBus.DummyPacket = this.dummyPacket;
+            this.dummyPacket.DistanceX = Math.Abs(autocar.X - circle.X);
+            this.dummyPacket.DistanceY = Math.Abs(autocar.Y - circle.Y);
         }
     }
 }
