@@ -10,6 +10,7 @@
         public DummySensor(VirtualFunctionBus virtualFunctionBus) : base(virtualFunctionBus)
         {
             this.dummyPacket = new DummyPacket();
+            this.virtualFunctionBus.DummyPacket = this.dummyPacket;
         }
         public override void Process()
         {
