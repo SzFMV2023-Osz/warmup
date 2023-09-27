@@ -10,8 +10,8 @@ public class DummySensor : SystemComponent
 
     public DummySensor(VirtualFunctionBus virtualFunctionBus) : base(virtualFunctionBus)
     {
-        virtualFunctionBus.RegisterComponent(this);
         DummyPacket = new DummyPacket();
+        this.virtualFunctionBus.DummyPacket = DummyPacket;
     }
 
     public override void Process()
