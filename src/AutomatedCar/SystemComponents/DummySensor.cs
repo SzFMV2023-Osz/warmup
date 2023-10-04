@@ -17,7 +17,7 @@
         public override void Process()
         {
             var circle = World.Instance.WorldObjects.First(x => x is Circle);
-            var autoCar = World.Instance.WorldObjects.First(x => x is AutomatedCar);
+            var autoCar = World.Instance.ControlledCar;
             (this.virtualFunctionBus.DummyPacket as DummyPacket).DistanceX = circle.X - autoCar.X;
             (this.virtualFunctionBus.DummyPacket as DummyPacket).DistanceY = circle.Y - autoCar.Y;
         }
